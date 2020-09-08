@@ -31,9 +31,33 @@ namespace ShootingDice
             player1.Play(large);
 
             Console.WriteLine("-------------------");
+            
+//Start of my player inserts:
+
+            SmackTalkingPlayer LilRich = new SmackTalkingPlayer();
+            LilRich.Name = "LilRICH";
+            LilRich.tauntz = "Cmon now babi, you used to be so good at em circular shaped dice...what happened?";
+            LilRich.Play(large);
+
+            Console.WriteLine("-------------------");
+
+            OneHigherPlayer SnakeEyesMcGee = new OneHigherPlayer();
+            SnakeEyesMcGee.Name = "SnakeEyesMcGee";
+            SnakeEyesMcGee.Play(LilRich);
+
+            Console.WriteLine("-------------------");
+
+            CreativeSmackTalkingPlayer RandomTauntBoi = new CreativeSmackTalkingPlayer();
+            RandomTauntBoi.Name = "RandomTauntBoi";
+            RandomTauntBoi.Play(SnakeEyesMcGee);
+
+            Console.WriteLine("-------------------");
+
+
+
 
             List<Player> players = new List<Player>() {
-                player1, player2, player3, large
+                player1, player2, player3, large, LilRich, SnakeEyesMcGee, RandomTauntBoi,
             };
 
             PlayMany(players);
