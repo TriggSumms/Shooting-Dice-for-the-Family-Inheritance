@@ -21,20 +21,25 @@ namespace ShootingDice
 
 
             //int secretNumber = 68;
-            int randomTaunt = new Random().Next(0, 2);
-            //Console.WriteLine(randomTaunt);
+            int randomTaunt = new Random().Next(0, TauntList.Count);
+            
+            //Need to pull specific numeric in the index
             int myRoll = Roll(); 
+            
             int otherRoll = other.Roll();
             
            
 
             Console.WriteLine($"{Name} rolls a {myRoll}");
-            Console.WriteLine(randomTaunt);
+            Console.WriteLine(TauntList[randomTaunt]);
+            
             Console.WriteLine($"{other.Name} rolls a {otherRoll}");
             
             if (myRoll > otherRoll)
             {
+               Console.WriteLine(randomTaunt);
                 Console.WriteLine($"{Name} Wins!");
+                //Console.WriteLine(TauntList[randomTaunt]);
             }
             else if (myRoll < otherRoll)
             {
@@ -43,7 +48,11 @@ namespace ShootingDice
             else
             {
                 // if the rolls are equal it's a tie
+                
+                //Console.WriteLine(randomTaunt);
                 Console.WriteLine("It's a tie");
+                //Console.WriteLine(TauntList[randomTaunt]);
+                
             }
         }
     }

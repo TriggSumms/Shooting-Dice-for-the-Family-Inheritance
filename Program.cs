@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 
+
+//Quick link:https://www.codeproject.com/Questions/1263328/Csharp-random-function-to-roll-3-dice#:~:text=private%20Random%20rnd%20%3D%20new%20Random,from%20dice%203%20...%20%7D
+
+
 namespace ShootingDice
 {
     class Program
@@ -55,8 +59,10 @@ namespace ShootingDice
             CreativeSmackTalkingPlayer RandomTauntBoi = new CreativeSmackTalkingPlayer();
             RandomTauntBoi.Name = "RandomTauntBoi";
             RandomTauntBoi.Play(HumanBoi);
+           // RandomTauntBoi.Play(players);
+            //figure out a way too make him always taunt?
 
-//ISsues currently with SoreLoserPlayer
+//Issues currently with SoreLoserPlayer
             Console.WriteLine("-------------------");
             SoreLoserPlayer LoserforSure = new SoreLoserPlayer();
             LoserforSure.Name = "LoserforSure";
@@ -64,10 +70,24 @@ namespace ShootingDice
 
             Console.WriteLine("-------------------");
 
+            Console.WriteLine("-------------------");
+            UpperHalfPlayer BigRollerStrangeDaddy = new UpperHalfPlayer();
+            BigRollerStrangeDaddy.Name = "BigRollerStrangeDaddy";
+            BigRollerStrangeDaddy.Play(LoserforSure);
+
+            Console.WriteLine("-------------------");
+
+            Console.WriteLine("-------------------");
+            SoreLoserUpperHalfPlayer TheUltimateDiceBabi = new SoreLoserUpperHalfPlayer();
+            TheUltimateDiceBabi.Name = "TheUltimateDiceBabi";
+            TheUltimateDiceBabi.Play(BigRollerStrangeDaddy);
+
+            Console.WriteLine("-------------------");
+
 
 
             List<Player> players = new List<Player>() {
-                player1, player2, player3, large, LilRich, SnakeEyesMcGee, HumanBoi, RandomTauntBoi, LoserforSure,
+                player1, player2, player3, large, LilRich, SnakeEyesMcGee, HumanBoi, RandomTauntBoi, LoserforSure, BigRollerStrangeDaddy, TheUltimateDiceBabi
             };
 
             PlayMany(players);
