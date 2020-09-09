@@ -47,17 +47,27 @@ namespace ShootingDice
 
             Console.WriteLine("-------------------");
 
+            HumanPlayer HumanBoi = new HumanPlayer();
+            HumanBoi.Name = "RandomTauntBoi";
+            HumanBoi.Play(SnakeEyesMcGee);
+
+            Console.WriteLine("-------------------");
             CreativeSmackTalkingPlayer RandomTauntBoi = new CreativeSmackTalkingPlayer();
             RandomTauntBoi.Name = "RandomTauntBoi";
-            RandomTauntBoi.Play(SnakeEyesMcGee);
+            RandomTauntBoi.Play(HumanBoi);
+
+//ISsues currently with SoreLoserPlayer
+            Console.WriteLine("-------------------");
+            SoreLoserPlayer LoserforSure = new SoreLoserPlayer();
+            LoserforSure.Name = "LoserforSure";
+            LoserforSure.Play(RandomTauntBoi);
 
             Console.WriteLine("-------------------");
 
 
 
-
             List<Player> players = new List<Player>() {
-                player1, player2, player3, large, LilRich, SnakeEyesMcGee, RandomTauntBoi,
+                player1, player2, player3, large, LilRich, SnakeEyesMcGee, HumanBoi, RandomTauntBoi, LoserforSure,
             };
 
             PlayMany(players);

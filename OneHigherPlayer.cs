@@ -12,7 +12,6 @@ namespace ShootingDice
         {
            
             int OtherRoll = other.Roll();
-
             int HigherRoll = OtherRoll + 1;
 
             Console.WriteLine($"{Name} rolls a {HigherRoll}");

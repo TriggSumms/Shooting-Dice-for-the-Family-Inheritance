@@ -14,13 +14,38 @@ namespace ShootingDice
             "Wow....insert: 'Quote from Gordon Ramsey'"
         };
 
-        //Not working
-        public virtual int Roll()
+        public override void Play(Player other)
+
         {
-            // Return a random number between 1 and DiceSize, need to declare new variable and then tie in with selector
-            return new Random().Next(DiceSize) + 1;
+            //Still havent figured out this one
 
+
+            //int secretNumber = 68;
+            int randomTaunt = new Random().Next(0, 2);
+            //Console.WriteLine(randomTaunt);
+            int myRoll = Roll(); 
+            int otherRoll = other.Roll();
+            
+           
+
+            Console.WriteLine($"{Name} rolls a {myRoll}");
+            Console.WriteLine(randomTaunt);
+            Console.WriteLine($"{other.Name} rolls a {otherRoll}");
+            
+            if (myRoll > otherRoll)
+            {
+                Console.WriteLine($"{Name} Wins!");
+            }
+            else if (myRoll < otherRoll)
+            {
+                Console.WriteLine($"{other.Name} Wins!");
+            }
+            else
+            {
+                // if the rolls are equal it's a tie
+                Console.WriteLine("It's a tie");
+            }
         }
-
     }
 }
+
